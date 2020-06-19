@@ -1,0 +1,98 @@
+.centrist{
+    text-align: center;
+}
+
+body{
+    background-color: black;
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+a{    
+    color: white !important;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.game-rows{
+    margin: 0px;
+}
+
+.dot {
+    height: 4.6em;
+    width: 4.6em;
+    background-color: grey; 
+    border-radius: 50%;
+    border: solid white 5px;
+    display: inline-block;
+}
+
+.winner-counter-section{
+    margin-top: 50%;
+}
+
+#win-point-text{
+    font-size: 150%
+}
+
+.turn-monitor{
+    margin-top: 45%
+}
+
+.winner-section{
+    text-align: center;
+    margin-top: 40%;
+    display: block;
+}
+
+#counter{
+    font-size: 500%;
+}
+
+#green-win-count{
+    color: green;
+}
+
+#red-win-count{
+    color: red;
+}
+
+.gameboard{
+
+}
+
+.reset-button{
+    font-size: large;
+}
+
+.reset-section{
+    margin-top: 25%;
+}
+
+
+#controller-logo{
+    font-size: 3em
+}
+
+#welcome{
+    text-align: center;
+    font-size: 3em;
+    margin-top: 0.2em;
+    margin-bottom: 4.5%;
+}
+
+#remaining-chip-text{
+    text-align: center;
+    font-size: 550%;
+}
+
+#turn-chip{
+    height: 10em;
+    width: 10em;
+    background-color: green;
+    border-radius: 50%;
+    border: solid white 10px;
+    display: inline-block;
+}
