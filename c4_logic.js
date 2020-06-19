@@ -101,19 +101,74 @@ function verticalLineCheck(turn) {
 }
 
 function diagonalUpCheck(turn) {
+    var comparator = [];
+    if (turn === green) {
+        comparator = greenChecker;
+    }
+
+    if (turn === red) {
+        comparator = redChecker;
+    }
+
+    if (
+        JSON.stringify([grid[3], grid[9], grid[15], grid[21]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[20], grid[26], grid[32], grid[38]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[4], grid[10], grid[16], grid[22]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[10], grid[16], grid[22], grid[28]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[13], grid[19], grid[25], grid[31]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[19], grid[25], grid[31], grid[37]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[5], grid[11], grid[17], grid[23]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[11], grid[17], grid[23], grid[29]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[17], grid[23], grid[29], grid[35]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[6], grid[12], grid[18], grid[24]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[12], grid[18], grid[24], grid[30]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[18], grid[24], grid[30], grid[36]]) == JSON.stringify(comparator)
+    ) {
+        return true;
+    }
+
+    return false;
 
 }
 
 function diagonalDownCheck(turn) {
+    var comparator = [];
+    if (turn === green) {
+        comparator = greenChecker;
+    }
 
+    if (turn === red) {
+        comparator = redChecker;
+    }
+
+    if (
+        JSON.stringify([grid[14], grid[22], grid[30], grid[38]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[3], grid[11], grid[19], grid[27]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[7], grid[15], grid[23], grid[31]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[15], grid[23], grid[31], grid[39]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[2], grid[10], grid[18], grid[26]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[10], grid[18], grid[26], grid[34]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[0], grid[8], grid[16], grid[24]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[8], grid[16], grid[24], grid[32]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[16], grid[24], grid[32], grid[40]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[1], grid[9], grid[17], grid[25]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[9], grid[17], grid[25], grid[33]]) == JSON.stringify(comparator)
+        || JSON.stringify([grid[17], grid[25], grid[33], grid[41]]) == JSON.stringify(comparator)
+    ) {
+        return true;
+    }
+
+    return false;
 }
+
+
 
 function checkWinner(turn) {
     if (
         horizontalLineCheck(currentTurn)
         || verticalLineCheck(currentTurn)
-        // || diagonalDownCheck(currentTurn)
-        // || diagonalUpCheck(currentTurn)
+        || diagonalDownCheck(currentTurn)
+        || diagonalUpCheck(currentTurn)
     ) {
         winnerText.text(currentTurn);
         winnerText.css("color", currentTurn);
@@ -164,7 +219,7 @@ function turnSwitcher() {
 }
 
 col0.click(function () {
-    if(wonStatus) return;
+    if (wonStatus) return;
 
     if (checkWinner(currentTurn)) {
         return;
@@ -192,7 +247,7 @@ col0.click(function () {
 });
 
 col1.click(function () {
-    if(wonStatus) return;
+    if (wonStatus) return;
 
     if (checkWinner(currentTurn)) {
         return;
@@ -220,7 +275,7 @@ col1.click(function () {
 });
 
 col2.click(function () {
-    if(wonStatus) return;
+    if (wonStatus) return;
 
     if (checkWinner(currentTurn)) {
         return;
@@ -248,7 +303,7 @@ col2.click(function () {
 });
 
 col3.click(function () {
-    if(wonStatus) return;
+    if (wonStatus) return;
 
     if (checkWinner(currentTurn)) {
         return;
@@ -276,7 +331,7 @@ col3.click(function () {
 });
 
 col4.click(function () {
-    if(wonStatus) return;
+    if (wonStatus) return;
 
     if (checkWinner(currentTurn)) {
         return;
@@ -304,7 +359,7 @@ col4.click(function () {
 });
 
 col5.click(function () {
-    if(wonStatus) return;
+    if (wonStatus) return;
 
     if (checkWinner(currentTurn)) {
         return;
@@ -332,7 +387,7 @@ col5.click(function () {
 });
 
 col6.click(function () {
-    if(wonStatus) return;
+    if (wonStatus) return;
 
     if (checkWinner(currentTurn)) {
         return;
